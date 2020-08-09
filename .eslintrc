@@ -1,0 +1,14 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "semi": "off",
+    "comma-dangle": "off",
+    "one-var": "off",
+    "indent": "off",
+    "linebreak-style": "off",
+    "arrow-parens": "off",
+    "no-undef": "off",
+    "eol-last": "off"
+  },
+  "extends": ["eslint:recommended", "google"]
+}
