@@ -11,27 +11,28 @@
 </head>
 <body>
     <div id="app">
-        <div class="excel">
-            <div class="excel__header">
-                <input type="text" class="input" value="New Table">
-
-                <div>
-                    <div class="button">
-                        <i class="material-icons">delete</i>
-                    </div>
-                    <div class="button">
-                        <i class="material-icons">exit_to_app</i>
-                    </div>
+        <div class="db">
+            <div class="db__header">
+                <h1>Excel Main</h1>
+            </div>
+            <div class="db__new">
+                <div class="db__view">
+                    <a href="#" class="db__create">
+                        New <br/> table
+                    </a>
                 </div>
             </div>
-            <div class="excel__toolbar">
-
-            </div>
-            <div class="excel__formula">
-
-            </div>
-            <div class="excel__table">
-
+            <div class="db__table db__view">
+                <div class="db__list-header">
+                    <span>Title</span>
+                    <span>Last opened</span>
+                </div>
+                <ul class="db__list">
+                    <li class="db__record">
+                        <a href="#">Table 1</a>
+                        <strong>12.06.1111</strong>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
