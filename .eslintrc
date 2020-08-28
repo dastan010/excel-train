@@ -8,7 +8,10 @@
     "linebreak-style": "off",
     "arrow-parens": "off",
     "no-undef": "off",
-    "eol-last": "off"
+    "eol-last": "off",
+    "require-jsdoc": "off",
+    "no-trailing-spaces": "off",
+    "operator-linebreak": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }
