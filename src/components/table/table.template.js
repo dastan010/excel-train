@@ -13,7 +13,7 @@ function createCol(col) {
     return `<div class="column">${col}</div>`
 }
 
-function createRow(iterator, content) {
+function createRow(content, iterator) {
     return `
         <div class="row">
             <div class="row-info">${iterator ? iterator : ''}</div>
@@ -41,7 +41,7 @@ export function createTable(rowsCount = 20) {
             .fill('')
             .map(toCell)
             .join('')
-        rows.push(createRow(i+1, cells))
+        rows.push(createRow(cells, i+1))
     }
 
     return rows.join('')
