@@ -1,4 +1,4 @@
-import {capitilize} from '@core/utils';
+import {capitilize} from '@core/utils'
 
 export class DomListener {
     constructor($root, listeners = []) {
@@ -18,13 +18,17 @@ export class DomListener {
                  `Method ${method} is not implemented in ${name} Component`
                 )
             }
+            this[method] = this[method].bind(this)
             // It is exactly like eventListener
-            this.$root.on(listener, this[method].bind(this))
+            this.$root.on(listener, this[method])
         })
     }
 
     removeDOMListeners() {
-        console.log('Remove: ', this.listeners)
+        this.listeners.forEach(listener => {
+            const method = createEvent(listener)
+            this.$root.off(listener, this[method])
+        })
     }
 }
 
