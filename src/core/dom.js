@@ -62,6 +62,11 @@ class Dom {
         })
     }
 
+    focus() {
+        this.$el.focus()
+        return this
+    }
+
     addClass(className) {
         this.$el.classList.add(className)
     }
