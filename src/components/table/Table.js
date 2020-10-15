@@ -29,7 +29,7 @@ export class Table extends ExcelComponent {
         const $cell = this.$root.find('[data-id="0:0"]')
         this.selection.select($cell)
 
-        this.emitter.subscribe('something', text => {
+        this.$on('formula:input', text => {
             this.selection.current.text(text)
         })
     }
@@ -50,19 +50,19 @@ export class Table extends ExcelComponent {
 
     onKeydown(event) {
         const keys = [
-                      'Enter', 
-                      'Tab', 
-                      'ArrowLeft', 
-                      'ArrowRight', 
-                      'ArrowDown', 
-                      'ArrowUp'
-                    ]
+            'Enter', 
+            'Tab', 
+            'ArrowLeft', 
+            'ArrowRight', 
+            'ArrowDown', 
+            'ArrowUp'
+        ]
         
         const {key} = event
         if (keys.includes(key) && !event.shiftKey) {
             event.preventDefault()
             const id = this.selection.current.id(true),
-            $next = this.$root.find(nextSelector(key, id))
+                  $next = this.$root.find(nextSelector(key, id))
             this.selection.select($next)
         }
     }

@@ -1,4 +1,5 @@
 import {ExcelComponent} from '@core/ExcelComponent'
+// import {TableSelection} from '../table/TableSelection'
 
 export class Formula extends ExcelComponent {
     static className = 'excel__formula'
@@ -20,6 +21,6 @@ export class Formula extends ExcelComponent {
 
     onInput(event) {
         const text = event.target.textContent.trim()
-        this.emitter.emit('something', text)
+        this.$emit('formula:input', text)
     }
 }
