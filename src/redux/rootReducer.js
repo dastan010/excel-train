@@ -1,3 +1,3 @@
-export function rootReducer() {
-  
+export function rootReducer(state, action) {
+  return state
 }
