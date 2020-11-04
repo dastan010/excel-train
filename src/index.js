@@ -11,7 +11,6 @@ import {storage} from './core/utils'
 const store = createStore(rootReducer, storage('excel-state'))
 
 store.subscribe(state => {
-    console.log(state)
     storage('excel-state', state)
 })
 
