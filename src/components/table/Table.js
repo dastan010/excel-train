@@ -44,7 +44,6 @@ export class Table extends ExcelComponent {
     selectCell($cell) {
         this.selection.select($cell)
         this.$emit('table:select', $cell)
-        this.$dispatch({type: 'TEST'})
     }
 
     async resizeTable(event) {
