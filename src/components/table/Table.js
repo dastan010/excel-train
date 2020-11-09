@@ -29,16 +29,15 @@ export class Table extends ExcelComponent {
         super.init()
         const $cell = this.$root.find('[data-id="0:0"]')
         this.selectCell($cell)
+        
         this.$on('formula:done', () => {
             this.selection.current.focus()
         })
+        
         this.$on('formula:input', text => {
             this.selection.current.text(text)
             this.updateTextInStore(text)
         })
-        // this.$subscribe(state => {
-        //     console.log('TableState:', state);
-        // })
     }
 
     selectCell($cell) {
