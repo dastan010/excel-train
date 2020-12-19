@@ -28,12 +28,13 @@ export class Formula extends ExcelComponent {
         super.init()
         this.$formula = this.$root.find('#formula')
         this.$on('table:select', $cell => {
-            this.$formula.text($cell.text())
+            this.$formula.text($cell.data.value)
         })
     }
 
     onInput(event) {
-        this.$emit('formula:input', $(event.target).text())
+        const text = $(event.target).text()
+        this.$emit('formula:input', text)
     }
 
     onKeydown(event) {
