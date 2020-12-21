@@ -13,7 +13,6 @@ export class ExcelPage extends Page {
   getRoot() {
     const store = createStore(rootReducer, initialState)
     const stateListener = debounce(state => {
-        console.log('App state: ', state);
         storage('excel-state', state)
     }, 500)
 
@@ -28,7 +27,6 @@ export class ExcelPage extends Page {
   }
 
   afterRender() {
-    console.log('asd');
     this.excel.init()
   }
 
