@@ -60,7 +60,7 @@ class Dom {
     }
 
     find(selector) {
-         return $(this.$el.querySelector(selector))
+        return $(this.$el.querySelector(selector))
     }
 
     findAll(selector) {
