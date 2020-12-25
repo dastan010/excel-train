@@ -3,6 +3,7 @@ const path = require('path'),
       HTMLWebpackPlugin = require('html-webpack-plugin'),
       CopyPlugin = require('copy-webpack-plugin'),
       MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const webpack = require('webpack')
 
 const isProd = process.env.NODE_ENV === 'production',
       isDev = !isProd,
@@ -65,6 +66,9 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: filename('css')
+        }),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         })
     ],
     module: {
