@@ -1,6 +1,7 @@
 import {$} from '@core/dom'
 import {Emitter} from '../../core/Emitter'
 import {StoreSubscriber} from '../../core/StoreSubscriber'
+import {updateOpenedDate} from '../../redux/actions'
 
 export class Excel {
     constructor(options) {
@@ -28,6 +29,7 @@ export class Excel {
     }
 
     init() {
+        this.store.dispatch(updateOpenedDate())
         this.subscriber.subscribeComponents(this.components)
         this.components.forEach(component => component.init())
     }
