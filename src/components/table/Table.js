@@ -110,6 +110,7 @@ export class Table extends ExcelComponent {
     }
 
     onInput(event) {
+        this.selection.current.attr('data-value', $(event.target).text())
         this.updateTextInStore($(event.target).text())
     }
 }
