@@ -1,5 +1,6 @@
 import {$} from '@core/dom'
 import {ActiveRoute} from './ActiveRoute'
+
 export class Router {
   constructor(selector, routes) {
     if (!selector) {
@@ -22,9 +23,7 @@ export class Router {
     if (this.page) {
       this.page.destroy()
     }
-    
     this.$placeholder.clear()
-
     const Page = ActiveRoute.path.includes('excel') 
       ? this.routes.excel
       : this.routes.dashboard
