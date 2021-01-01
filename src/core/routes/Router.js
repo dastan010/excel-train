@@ -1,4 +1,4 @@
-import {$} from '@core/dom'
+import {$} from '../dom'
 import {ActiveRoute} from './ActiveRoute'
 
 export class Router {
@@ -36,3 +36,4 @@ export class Router {
     window.removeEventListener('hashchange', this.changePageHandler)   
   }
 }
+
